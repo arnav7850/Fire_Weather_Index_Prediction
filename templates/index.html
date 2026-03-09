@@ -1,46 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FWI Prediction</title>
-    <!-- <link rel="stylesheet" 
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<meta charset="UTF-8">
+<title>FWI Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div class="container mt-5">
-    <h1>FWI Prediction</h1>
+<div class="main-container">
 
-    <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict_datapoint') }}" method="post">
+    <div class="card">
 
-        <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br><br>
+        <h1>🔥 FWI Prediction</h1>
+        <p class="subtitle">Forest Fire Weather Index Predictor</p>
 
-        <input type="text" name="RH" placeholder="RH" required="required" /><br><br>
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
 
-        <input type="text" name="Ws" placeholder="Ws" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="Temperature" placeholder="Temperature (°C)" required>
+            </div>
 
-        <input type="text" name="Rain" placeholder="Rain" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="RH" placeholder="Relative Humidity" required>
+            </div>
 
-        <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="Ws" placeholder="Wind Speed" required>
+            </div>
 
-        <input type="text" name="DMC" placeholder="DMC" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="Rain" placeholder="Rain (mm)" required>
+            </div>
 
-        <input type="text" name="ISI" placeholder="ISI" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="FFMC" placeholder="FFMC" required>
+            </div>
 
-        <input type="text" name="Classes" placeholder="Classes" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="DMC" placeholder="DMC" required>
+            </div>
 
-        <input type="text" name="Region" placeholder="Region" required="required" /><br><br>
+            <div class="input-group">
+                <input type="number" name="ISI" placeholder="ISI" required>
+            </div>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">
-            Predict
-        </button>
+            <div class="input-group">
+                <input type="number" name="Classes" placeholder="Classes" required>
+            </div>
 
-    </form>
+            <div class="input-group">
+                <input type="number" name="Region" placeholder="Region" required>
+            </div>
 
-    <h2>
-        The FWI prediction is {{ results }}
-    </h2>
+            <button type="submit" class="btn">
+                Predict
+            </button>
+
+        </form>
+
+        <div class="result">
+            <h2>{{ results }}</h2>
+        </div>
+
+    </div>
 
 </div>
 
