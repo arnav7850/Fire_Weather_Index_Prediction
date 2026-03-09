@@ -1,0 +1,54 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#ff512f,#dd2476);
+color:white;
+text-align:center;
+}
+
+/* container */
+.container{
+display:flex;
+flex-direction:column;
+align-items:center;   /* centers everything horizontally */
+justify-content:center;
+}
+
+/* subtitle */
+.subtitle{
+margin-top:10px;
+margin-bottom:25px;
+}
+
+/* center the link */
+.container a{
+display:flex;
+justify-content:center;
+}
+
+/* button */
+.btn{
+padding:14px 30px;
+border-radius:30px;
+border:2px solid black;
+background:white;
+color:#dd2476;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* hover */
+.btn:hover{
+transform:scale(1.05);
+background:#f1f1f1;
+}
